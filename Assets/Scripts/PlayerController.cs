@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("You Win");
         }
+        else if (other.CompareTag("DeathPlane"))
         {
             rb.position = startPosition;
         }
