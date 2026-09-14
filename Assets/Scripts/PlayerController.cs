@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
         else if (other.CompareTag("DeathPlane"))
         {
             rb.position = startPosition;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+
+
         }
     }
 
@@ -33,7 +37,7 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = (transform.right * moveX) + (transform.forward * moveZ);
 
         // Apply movement to the rigidbody
-        rb.AddForce(movement * moveSpeed, ForceMode.Force);
+        rb.AddForce(movement * moveSpeed, ForceMode.Acceleration);
     }
 
 }
